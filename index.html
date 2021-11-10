@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>first site</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+</head>
+<body>
+	<div id="game">
+		<section id="menu" class="hidden">
+			<form action="#">
+				<input type="text" name="name" id="nameField">
+				<button type="submit" id="startBtn" onclick="start();">Начать</button>
+			</form>
+		</section>
+		<section id="main">
+			<div id="interface">
+
+				<div id="name">name</div>
+
+				<div id="charge">
+					<span id="chargeCount">50</span>
+					<span>%</span>
+				</div>
+
+				<div id="timer">
+					<div id="timerMin">00</div>
+					<span>:</span>
+					<div id="timerSec">00</div>
+				</div>
+			</div>
+			<div id="content">
+				<div id="bg1" class="bg"></div>
+				<div id="bg2" class="bg"></div>
+				<div id="player" class="player-center"></div>
+				<!-- <div id="wall" class="wall element element-top"></div> -->
+				<!-- <div id="battery" class="battery element-center"></div> -->
+			</div>
+		</section>
+	</div>
+	<section id="score" class="hidden">
+		<p class="name">Name</p>
+		<p class="time">Time</p>
+		<input type="submit" value="Restart">
+	</section>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

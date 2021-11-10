@@ -1,0 +1,211 @@
+/*
+ * Document Stretch
+ */
+
+html, body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background: #222;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+
+
+/*
+ * Game Styles
+ */
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#game {
+	display: flex;
+	/*flex-direction: column;*/
+	width: 100%;
+	height: 100%;
+	width: 850px;
+	height: 900px;
+	overflow: hidden;
+}
+
+#game > * {
+	height: 100%;
+	width: 100%;
+}
+
+/* Main Section */
+
+#main {
+	position: relative;
+}
+
+#charge {
+	width: 70px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #3a3;
+	border-radius: 5px;
+}
+
+#interface {
+	height: 100%;
+	width: 100px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 999;
+	background: white;
+	padding: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#content {
+	height: 100%;
+	background: #333;
+}
+
+#content > * {
+	position: absolute;
+}
+
+/* Game Objects */
+.wall {
+	background: #a33;
+	max-height: 500px;
+	min-height: 100px;
+	width: 50px;
+	right: 0;
+}
+
+.battery {
+	width: 50px;
+	height: 50px;
+	background: #3a3;
+	animation: elMove 5s linear 1.148s forwards;
+}
+
+#timer {
+	position: relative;
+	display: flex;
+	color: black;
+	z-index: 100;
+}
+
+#player {
+	background: url('../media/images/helli.png');
+	background-size: 110% 110%;
+	left: 100px;
+	width: 50px;
+	height: 50px;
+	transition: top .5s, transform .5s;
+}
+
+.player-top {
+	top: 20%;
+	transform: translateY(0);
+}
+
+.player-center {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.player-bottom {
+	top: 80%;
+	transform: translateY(-100%);
+}
+
+.element {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	right: 0;
+}
+
+.element-top {
+	top: 0;
+}
+
+.element-bottom {
+	bottom: 0;
+}
+
+.element-center:not(#wall) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.battery-top {
+	
+}
+
+.wall.element-center {
+	height: 50%;
+}
+
+.wall {
+	animation: elMove 5s linear forwards;
+}
+
+
+@keyframes elMove {
+	0% {
+		right: 0;
+	}
+
+	100% {
+		right: calc(101% - 100px);
+	}
+}
+
+/* 
+* Helpers
+*/
+
+.hidden {
+	display: none;
+}
+
+.rel-helper {
+	position: relative;
+	height: 100%;
+	width: 100%;
+}
+
+.left-top {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.right-top {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.left-bottom {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.right-bottom {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
